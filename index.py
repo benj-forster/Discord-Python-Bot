@@ -5,18 +5,15 @@ import asyncio
 import time
 
 Client = discord.Client()
-client = commands.Bot(command_prefix = "!")
+client = commands.Bot(command_prefix = "?")
+
+chat_filter = ["PINEAPPLE", "APPLE", "CHROME"]
+bypass_list = []
 
 @client.event
 async def on_ready():
-    print ("Bot is ready!")
-
-@client.event
-async def on_message(message):
-    if message.content == "cookie":
-        await client.send_message(message.channel, ":cookie:")
-
-
-
-        
+    print("Bot is online and connected to Discord")                
+    
+    
+    
 client.run(process.env.token)
